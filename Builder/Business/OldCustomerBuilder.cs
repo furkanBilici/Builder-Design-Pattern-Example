@@ -9,12 +9,17 @@ namespace Builder.Business
 {
     internal class OldCustomerBuilder : ProductBuilder
     {
-        public override void ApplyDiscount(ProductViewModel model)
+        public override void ApplyDiscount()
         {
             throw new NotImplementedException();
         }
 
-        public override ProductViewModel GetProductData()
+        public override ProductViewModel GetProduct()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void GetProductData()
         {
             throw new NotImplementedException();
         }

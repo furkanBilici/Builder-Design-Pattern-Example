@@ -12,23 +12,33 @@ namespace Builder.Business
         ProductViewModel model=new ProductViewModel();
         public override void ApplyDiscount()
         {
-            { model.Id = 1;
-            model.Name = "Ss24ultra";
-            model.UnitPrice = 70000;
-            model.Category = "phone";
-            model.Discount = 10;
-            model.DiscountedPrice = model.UnitPrice * ((100 - model.Discount) / 100); }//data base den gelen veriler olsun bunlar
+            model.Discount = 10;//başka şekilde gelebilir veri
+
+            if (model.Discount > 0)
+            {
+                model.DiscountedPrice = model.UnitPrice * ((100 - model.Discount) / 100);
+                model.DiscountApplied = true;
+            }
+            else
+            {
+                model.DiscountApplied = false;
+            }
+
+        }
+        public override ProductViewModel GetProduct()
+        {
+            return model;
         }
 
-        public override ProductViewModel GetProductData()
+        public override void GetProductData()
         {
             {
                 model.Id = 1;
                 model.Name = "Ss24ultra";
                 model.UnitPrice = 70000;
                 model.Category = "phone";
-                model.Discount = 10;
-            } return model;
-            }
+            }//data base den gelen veriler olsun bunlar
+
+        }
     }
 }
