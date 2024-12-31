@@ -10,6 +10,6 @@ namespace Builder.Business
     public abstract class ProductBuilder
     {
         public abstract ProductViewModel GetProductData();//daha farklı değerler döndürebilir
-        public abstract void ApplyDiscount(); 
+        public abstract void ApplyDiscount(ProductViewModel model); 
     }
 }
