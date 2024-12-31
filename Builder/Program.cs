@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Builder.Business;
+
+ProductDirector director = new ProductDirector();
+var builder = new NewCustomerBuilder();
+director.GenerateProduct(builder);
+var model = builder.GetProduct();
+Console.WriteLine(model.Name);   
